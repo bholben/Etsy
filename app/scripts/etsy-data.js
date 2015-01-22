@@ -1,4 +1,4 @@
-var etsyData = {
+var etsyListingsData = {
 "count": 21,
 "results": [
 {
