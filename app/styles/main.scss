@@ -3,25 +3,199 @@
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
 
 // Custom Styles
-body {
-  background: #fafafa;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333;
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 600px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+body {
+  font-family: "Arial", Helvetica, sans-serif;
+  box-sizing: border-box;
+  padding: 0 10px;
+  background: #F5F5F1;
+  color: #666;
+  font-size: 12px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+h3 {
+  font-size: 13px;
+  margin: 1px 0 6px;
+}
+
+h4 {
+  font-size: 13px;
+  line-height: 13px;
+  padding-bottom: 6px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+input[type="radio"] {
+  margin-right: 8px;
+}
+
+header {
+  height: 80px;
+  margin-left: -10px;
+  margin-right: -10px;
+  background: white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1),0 0 0 1px rgba(0, 0, 0, 0.05);
+  nav {
+    margin: 0 auto;
+    width: 1000px;
+    .logo {
+      display: inline-block;
+      margin-top: 25px;
+      vertical-align: -17px;
+    }
+    .search {
+      margin-left: 15px;
+      .search-box {
+        width: 260px;
+        padding: 6px 10px;
+        margin-right: -5px;
+        background: #FBFBFA;
+        // outline: none;
+        font-size: 14px;
+      }
+      button, .browse {
+        height: 34px;
+        line-height: 17px;
+        padding: 7px 15px 8px;
+        border: 1px solid;
+        border-radius: 3px;
+        font-size: 15px;
+      }
+      button {
+        width: 85px;
+        background: #3f98bb;
+        border-color: #54acc7 #4ca0ba #398a9d;
+        border-radius: 0 3px 3px 0;
+        color: white;
+      }
+      .browse {
+        width: 100px;
+        margin-left: 15px;
+        border-color: #bbb;
+        cursor: pointer;
+      }
+    }
+    .nav-right {
+      float: right;
+      ul li {
+        float: left;
+        height: 38px;
+        margin-top: -37px;
+        padding: 8px;
+        color: #0192B5;
+        font-size: 15px;
+      }
+      .sign-in {
+        border: 1px solid;
+        border-radius: 3px;
+      }
+      .cart {
+        margin-left: 20px;
+        padding-left: 15px;
+        border-left: 1px solid #ddd;
+      }
+    }
   }
 }
+
+.container {
+  margin: 0 auto;
+  width: 1000px;
+  padding: 25px 0;
+  overflow: hidden;
+}
+
+aside {
+  float: left;
+  // margin-right: 0px;
+  .sidebar {
+    float: left;
+    width: 224px;
+    margin-top: 5px;
+    padding: 14px;
+    background: white;
+    color: #0192b5;
+    font-size: 13px;
+    h4 {
+      border-top: 1px solid #dfdfdf;
+      margin-top: 15px;
+      padding-top: 15px;
+      color: #666;
+    }
+    h4:first-child {
+      border-top: none;
+      margin-top: 0;
+      padding-top: 0;
+    }
+    .item-type li {
+      // padding: 3px;
+      line-height: 26px;
+    }
+  }
+  .selected {
+    font-weight: 700;
+    color: #666;
+  }
+}
+
+section {
+  float: left;
+  width: 776px;
+  .search-header {
+    overflow: hidden;
+    margin-bottom: 7px;
+    padding-left: 28px;
+    line-height: 18px;
+    .search-title {
+      float: left;
+    }
+    .search-sort {
+      float: right;
+    }
+  }
+
+  .listing {
+    display: inline-block;
+    margin: 0 0 18px 24px;
+    border: 4px solid white;
+    border-bottom: none;
+    border-radius: 3px 3px 0 0;
+    background: white;
+    img {
+      width: 224px;
+      height: 170px;
+    }
+    .listing-description {
+      padding: 2px;
+    }
+    .listing-info {
+      padding: 10px 2px;
+      margin-bottom: 12px;
+      .listing-source {
+        float: left;
+      }
+      .listing-price {
+        float: right;
+      }
+    }
+  }
+}
+
 
