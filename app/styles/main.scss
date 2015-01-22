@@ -40,10 +40,15 @@ ul {
 
 a {
   text-decoration: none;
+  color: #0192b5;
 }
 
-input[type="radio"] {
-  margin-right: 8px;
+a:hover {
+  text-decoration: underline;
+}
+
+input[type="radio"], input[type="checkbox"] {
+  margin: 6px 8px 6px 0;
 }
 
 header {
@@ -96,8 +101,7 @@ header {
       float: right;
       ul li {
         float: left;
-        height: 38px;
-        margin-top: -37px;
+        margin-top: 22px;
         padding: 8px;
         color: #0192B5;
         font-size: 15px;
@@ -133,7 +137,7 @@ aside {
     background: white;
     color: #0192b5;
     font-size: 13px;
-    h4 {
+    h4, .price-filter, .ship-to {
       border-top: 1px solid #dfdfdf;
       margin-top: 15px;
       padding-top: 15px;
@@ -144,9 +148,67 @@ aside {
       margin-top: 0;
       padding-top: 0;
     }
-    .item-type li {
-      // padding: 3px;
-      line-height: 26px;
+    .price-filter {
+      input, button {
+        height: 35px;
+        border-radius: 3px;
+      }
+      input {
+        width: 60px;
+        margin-right: 5px;
+      }
+      button {
+        width: 40px;
+        background: #eee;
+        border-color: #cbcbcb;
+      }
+    }
+    .color-filter {
+      overflow: hidden;
+      li {
+        float: left;
+        width: 20px;
+        height: 20px;
+        margin: 5px 4px 5px 0;
+        border: 1px solid #bbb;
+        border-radius: 3px;
+      }
+      .red {
+        background: #F40B32;
+      }
+      .orange {
+        background: #FF7F00;
+      }
+      .yellow {
+        background: #F3CC0C;
+      }
+      .green {
+        background: #0AC20A;
+      }
+      .cyan {
+        background: #0CCCF3;
+      }
+      .purple {
+        background: #A60CF3;
+      }
+      .black {
+        background: black;
+      }
+    }
+    .shop-location {
+      margin-top: 12px;
+    }
+    .ship-to {
+      width: 194px;
+      height: 34px;
+      overflow: hidden;
+      background: none;
+      h4 {
+        float: left;
+      }
+      div {
+        float: right;
+      }
     }
   }
   .selected {
@@ -165,6 +227,9 @@ section {
     line-height: 18px;
     .search-title {
       float: left;
+      .search-word {
+        font-weight: 700;
+      }
     }
     .search-sort {
       float: right;

@@ -57,7 +57,7 @@
 
           <h4>Categories</h4>
           <a href="#">Handmade</a>
-          <ul>
+          <ul class="categories">
             <li>Paper Goods</li>
             <li>Clothing</li>
             <li>Holidays</li>
@@ -67,11 +67,47 @@
             <li>Accessories</li>
           </ul>
 
-          <h4>Price Filter</h4>
+          <div class="price-filter">
+            <h4>Price Filter</h4>
+            <input type="text" placeholder="min">to
+            <input type="text" placeholder="max">
+            <button type="submit">V</button>
+          </div>
+
+
           <h4>Filter by Color</h4>
+          <ul class="color-filter">
+            <a href="#"><li class="red"></li></a>
+            <a href="#"><li class="orange"></li></a>
+            <a href="#"><li class="yellow"></li></a>
+            <a href="#"><li class="green"></li></a>
+            <a href="#"><li class="cyan"></li></a>
+            <a href="#"><li class="purple"></li></a>
+            <a href="#"><li class="black"></li></a>
+            <a href="#"><li class="white"></li></a>
+          </ul>
+
+
           <h4>Ordering Options</h4>
+          <ul>
+            <li><input type="checkbox">Accepts Etsy Gift Cards</li>
+            <li><input type="checkbox">Customizable</li>
+          </ul>
+
           <h4>Shop Location</h4>
-          <h4>Ships To</h4>
+          <ul>
+            <li><input type="radio">Anywhere</li>
+            <li><input type="radio">United States</li>
+          </ul>
+          <div class="shop-location"><a href="#">Choose a custom location</a></div>
+
+          <div class="ship-to">
+            <h4>Ships To</h4>
+            <div><a href="#">Clear</a></div>
+          </div>
+          <select class="ship-to">
+            <option value="usa">United States</option>
+          </select>
 
         </div>
 
@@ -80,7 +116,7 @@
       <section>
 
         <div class="search-header">
-          <span class="search-title">"javascript" We found 21 items!</span>
+          <span class="search-title"><span class="search-word">"javascript"</span> We found 21 items!</span>
           <span class="search-sort">Sort by: Relevance</span>
         </div>
 
