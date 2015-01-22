@@ -1,28 +1,30 @@
 
-console.log('The Iron Yard Rocks!');
-
-var container = $('section'),
-    img_url,
-    img_tag;
-
-console.log(etsyListingsData);
+var listingsContainer = $('section.main'),
+    fragment,
+    imgUrl,
+    description,
+    shopName,
+    price,
+    currencyCode;
 
 etsyListingsData.results.forEach(function (listing) {
 
-  img_url = listing.Images[0].url_fullxfull;
+  imgUrl = listing.Images[0].url_fullxfull,
+  description = listing.description,
+  shopName = listing.Shop.shop_name,
+  price = listing.price,
+  currencyCode = listing.currency_code;
 
-  img_tag = '<div class="listing">' +
-      '<img src="' + img_url + '">' +
-      '<p class="listing-description">' + listing.description + '</p>' +
+  fragment = '<div class="listing">' +
+      '<img src="' + imgUrl + '">' +
+      '<p class="listing-description">' + description + '</p>' +
       '<div class="listing-info">' +
-        '<div class="listing-source">' + listing.Shop.shop_name +'</div>' +
-        '<div class="listing-price"><span>$' + listing.price + '<span class="listing-currency">' + listing.currency_code + '</span></div>' +
+        '<div class="listing-source">' + shopName +'</div>' +
+        '<div class="listing-price"><span>$' + price + '<span class="listing-currency">' + currencyCode + '</span></div>' +
       '</div>'+
     '</div>'
 
-  // img_tag = '<img src="' + img_url + '">';
-
-  container.append(img_tag);
+  listingsContainer.append(fragment);
 
 });
 

@@ -6,9 +6,15 @@ var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var rimraf = require('rimraf');
 var exec = require('child_process').exec;
-var prompt = require('gulp-prompt');
+var connect = require('connect');
+var opn = require('opn');
+var connectLivereload = require('connect-livereload');
+var http = require('http');
+var wiredep = require('wiredep').stream;
+var nib = require('nib');
 
-gulp.task('styles', function () {
+
+gulp.task('scss', function () {
   return gulp.src('app/styles/main.scss')
     .pipe($.plumber())
     .pipe($.rubySass({
@@ -19,8 +25,18 @@ gulp.task('styles', function () {
     .pipe(gulp.dest('.tmp/styles'));
 });
 
-gulp.task('html', ['styles'], function () {
+gulp.task('styl', function () {
+  return gulp.src('app/styles/main.styl')
+    .pipe($.plumber())
+    .pipe($.stylus({
+      // 'nib' adds autoprefixing and some other niceties.
+      use: nib(),
+      compress: true
+    }))
+    .pipe(gulp.dest('.tmp/styles'));
+});
 
+gulp.task('html', ['scss'], function () {
   return gulp.src('app/*.html')
     .pipe($.useref.assets({searchPath: '{.tmp,app}'}))
     .pipe($.if('*.css', $.csso()))
@@ -57,9 +73,8 @@ gulp.task('clean', function (cb) {
 });
 
 gulp.task('connect', function () {
-  var connect = require('connect');
   var app = connect()
-    .use(require('connect-livereload')({port: 35729}))
+    .use(connectLivereload({port: 35729}))
     .use(connect.static('app'))
     .use(connect.static('.tmp'))
     // paths to bower_components should be relative to the current file
@@ -67,21 +82,19 @@ gulp.task('connect', function () {
     .use('/bower_components', connect.static('bower_components'))
     .use(connect.directory('app'));
 
-  require('http').createServer(app)
+  http.createServer(app)
     .listen(9000)
     .on('listening', function () {
       console.log('Started connect web server on http://localhost:9000');
     });
 });
 
-gulp.task('serve', ['connect', 'styles'], function () {
-  require('opn')('http://localhost:9000');
+gulp.task('serve', ['connect', 'scss'], function () {
+  opn('http://localhost:9000');
 });
 
 // inject bower components
 gulp.task('wiredep', function () {
-  var wiredep = require('wiredep').stream;
-
   gulp.src('app/styles/*.scss')
     .pipe(wiredep({directory: 'bower_components'}))
     .pipe(gulp.dest('app/styles'));
@@ -104,7 +117,7 @@ gulp.task('watch', ['connect', 'serve'], function () {
     'app/images/**/*'
   ]).on('change', $.livereload.changed);
 
-  gulp.watch('app/styles/**/*.scss', ['styles']);
+  gulp.watch('app/styles/**/*.scss', ['scss']);
   gulp.watch('bower.json', ['wiredep']);
 });
 
@@ -118,9 +131,8 @@ gulp.task('default', ['clean'], function () {
 
 // Push a subtree from our `dist` folder
 gulp.task('deploy', function() {
-
   gulp.src('/')
-    .pipe(prompt.prompt({
+    .pipe($.prompt.prompt({
         type: 'confirm',
         name: 'task',
         message: 'This will deploy to GitHub Pages. Have you already built your application and pushed your updated master branch?'
@@ -139,23 +151,21 @@ gulp.task('deploy', function() {
 // Test your app in the browser
 // Needs to be better, but needed something quick
 gulp.task('test-server', function() {
-
   // Open Test Page
-  var connect = require('connect');
   var app = connect()
-    .use(require('connect-livereload')({port: 35729}))
+    .use(connectLivereload({port: 35729}))
     .use(connect.static('test'))
     .use('/app', connect.static('app'))
     .use('/bower_components', connect.static('bower_components'))
     .use(connect.directory('test'));
 
-  require('http').createServer(app)
+  http.createServer(app)
     .listen(8000)
     .on('listening', function () {
       console.log('Started connect testing server on http://localhost:8000');
     });
 
-  require('opn')('http://localhost:8000');
+  opn('http://localhost:8000');
 
   // Watch for changes in either the test/spec folder or app/scripts folder
   $.livereload.listen();

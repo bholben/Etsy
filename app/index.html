@@ -10,6 +10,7 @@
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="../bower_components/normalize-css/normalize.css" />
+    <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css" />
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -22,13 +23,19 @@
 
     <header>
       <nav>
-        <a class="logo" href="#"><img src="images/etsylogo.png" alt="Etsy"></a>
 
-        <span class="search">
-          <input type="text" class="search-box" placeholder="Search for items or shops">
-          <button>Search</button>
-          <span class="browse">Browse</span>
-        </span>
+        <div class="nav-left">
+          <div class="logo">
+            <a href="#"><img src="images/etsylogo.png" alt="Etsy"></a>
+          </div>
+
+          <div class="search">
+            <input type="text" class="search-box" placeholder="Search for items or shops">
+            <button>Search</button>
+            <div class="browse">Browse</div>
+          </div>
+        </div>
+
 
 
         <div class="nav-right">
@@ -36,9 +43,15 @@
             <li>Help</li>
             <li>Register</li>
             <li class="sign-in">Sign In</li>
-            <li class="cart">Cart</li>
+            <li class="cart">
+              <div>
+                <i class="fa fa-shopping-cart"></i>
+                Cart
+              </div>
+            </li>
           </ul>
         </div>
+
       </nav>
     </header>
     <div class="container">
@@ -113,22 +126,13 @@
 
       </aside>
 
-      <section>
+      <section class="main">
 
         <div class="search-header">
           <span class="search-title"><span class="search-word">"javascript"</span> We found 21 items!</span>
           <span class="search-sort">Sort by: Relevance</span>
         </div>
 
-<!--    <div class="listing">
-          <img src="images/test.jpg" alt="">
-          <p class="listing-description">Commit. Deploy. Bail. Patches | Perf...</p>
-          <div class="listing-info">
-            <div class="listing-source">Creative Treachery</div>
-            <div class="listing-price"><span>$9.99<span class="listing-currency">USD</span></div>
-          </div>
-        </div>
- -->
       </section>
 
       <footer>
@@ -148,7 +152,7 @@
     <!-- endbuild -->
 
         <!-- build:js scripts/main.js -->
-        <script src="scripts/etsy-data.js"></script>
+        <script src="scripts/etsy_data.js"></script>
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
 </body>

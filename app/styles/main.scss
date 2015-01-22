@@ -1,9 +1,15 @@
- // Bourbon & Neat
-@import '../../bower_components/bourbon/dist/bourbon';
-@import '../../bower_components/neat/app/assets/stylesheets/neat';
 
-// Custom Styles
+// Variables
+$cTextMain: #666;
 
+// Mixins
+@mixin centerPage() {
+  margin: 0 auto;
+  width: 1000px;
+}
+
+
+// Built-in tags
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +20,7 @@ body {
   box-sizing: border-box;
   padding: 0 10px;
   background: #F5F5F1;
-  color: #666;
+  color: $cTextMain;
   font-size: 12px;
 }
 
@@ -51,6 +57,9 @@ input[type="radio"], input[type="checkbox"] {
   margin: 6px 8px 6px 0;
 }
 
+
+// Page consists of header and container
+// container consists of aside, section.main, and footer
 header {
   height: 80px;
   margin-left: -10px;
@@ -58,70 +67,89 @@ header {
   background: white;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1),0 0 0 1px rgba(0, 0, 0, 0.05);
   nav {
-    margin: 0 auto;
-    width: 1000px;
-    .logo {
-      display: inline-block;
-      margin-top: 25px;
-      vertical-align: -17px;
-    }
-    .search {
-      margin-left: 15px;
-      .search-box {
-        width: 260px;
-        padding: 6px 10px;
-        margin-right: -5px;
-        background: #FBFBFA;
-        // outline: none;
-        font-size: 14px;
+    @include centerPage();
+    // overflow: hidden;
+    .nav-left {
+      overflow: hidden;
+      .logo {
+        float: left;
+        margin-top: 25px;
+        // vertical-align: -17px;
       }
-      button, .browse {
-        height: 34px;
-        line-height: 17px;
-        padding: 7px 15px 8px;
-        border: 1px solid;
-        border-radius: 3px;
-        font-size: 15px;
-      }
-      button {
-        width: 85px;
-        background: #3f98bb;
-        border-color: #54acc7 #4ca0ba #398a9d;
-        border-radius: 0 3px 3px 0;
-        color: white;
-      }
-      .browse {
-        width: 100px;
-        margin-left: 15px;
-        border-color: #bbb;
-        cursor: pointer;
+      .search {
+        float: left;
+        width: 455px;
+        margin: 24px 0 0 15px;
+        overflow: hidden;
+        .search-box {
+          float: left;
+          width: 260px;
+          padding: 6px 10px;
+          margin-right: -5px;
+          background: #FBFBFA;
+          // outline: none;
+          font-size: 14px;
+        }
+        button, .browse {
+          float: left;
+          height: 34px;
+          line-height: 17px;
+          padding: 7px 15px 8px;
+          border: 1px solid;
+          border-radius: 3px;
+          font-size: 15px;
+        }
+        button {
+          width: 85px;
+          background: #3f98bb;
+          border-color: #54acc7 #4ca0ba #398a9d;
+          border-radius: 0 3px 3px 0;
+          color: white;
+        }
+        .browse {
+          float: right;
+          width: 100px;
+          margin-left: 15px;
+          border-color: #bbb;
+          cursor: pointer;
+        }
       }
     }
     .nav-right {
       float: right;
-      ul li {
-        float: left;
-        margin-top: 22px;
-        padding: 8px;
-        color: #0192B5;
-        font-size: 15px;
-      }
-      .sign-in {
-        border: 1px solid;
-        border-radius: 3px;
-      }
-      .cart {
-        margin-left: 20px;
-        padding-left: 15px;
-        border-left: 1px solid #ddd;
+      width: 260px;
+      ul {
+        margin-top: -40px;
+        li {
+          float: left;
+          padding: 8px;
+          color: #0192B5;
+          font-size: 15px;
+        }
+        .sign-in {
+          border: 1px solid;
+          border-radius: 3px;
+        }
+        .cart {
+          margin: -12px 0 0 20px;
+          padding-left: 15px;
+          border-left: 1px solid #ddd;
+          color: $cTextMain;
+          text-align: center;
+          font-size: 12px;
+          .fa {
+            display: block;
+            font-size: 22px;
+            margin-bottom: 5px;
+          }
+        }
       }
     }
   }
 }
 
 .container {
-  margin: 0 auto;
-  width: 1000px;
+  @include centerPage();
   padding: 25px 0;
   overflow: hidden;
 }
@@ -141,7 +169,7 @@ aside {
       border-top: 1px solid #dfdfdf;
       margin-top: 15px;
       padding-top: 15px;
-      color: #666;
+      color: $cTextMain;
     }
     h4:first-child {
       border-top: none;
@@ -213,11 +241,11 @@ aside {
   }
   .selected {
     font-weight: 700;
-    color: #666;
+    color: $cTextMain;
   }
 }
 
-section {
+section.main {
   float: left;
   width: 776px;
   .search-header {
@@ -245,14 +273,17 @@ section {
     border-bottom: none;
     border-radius: 3px 3px 0 0;
     background: white;
+    overflow: hidden;
     img {
       width: 224px;
       height: 170px;
     }
     .listing-description {
+      width: 100px;
       height: 14px;
       padding: 2px;
-      overflow: hidden;
+      overflow: ellipsis;
+      white-space: nowrap;
     }
     .listing-info {
       padding: 10px 2px;
