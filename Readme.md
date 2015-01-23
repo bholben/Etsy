@@ -1,6 +1,6 @@
 Deliverables:
-*
-*
+* https://github.com/bholben/Etsy
+* http://bholben.github.io/Etsy/
 
 ### Part 1
 
