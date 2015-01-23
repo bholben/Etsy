@@ -14,6 +14,23 @@ $cTextBrand: #0192b5;
   border-radius: 3px;
 }
 
+@mixin buttonPrimary() {
+  padding: 7px 15px 8px;
+  border: 1px solid #59AFCA;
+  border-radius: 3px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: normal;
+  background: #59AFCA;
+  cursor: pointer;
+  &:hover {
+    background: #429ABD;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
 
 // Built-in tags
 * {
@@ -22,7 +39,7 @@ $cTextBrand: #0192b5;
 }
 
 body {
-  font-family: "Arial", Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
   padding: 0 10px;
   background: #F5F5F1;
@@ -117,6 +134,12 @@ header {
           margin-left: 15px;
           border-color: #ddd;
           cursor: pointer;
+          &:hover {
+            border-color: #c0c0c0;
+          }
+          &:hover .fa {
+            color: #888;
+          }
           .fa {
             color: #bbb;
           }
@@ -136,6 +159,10 @@ header {
         }
         .sign-in {
           @include roundBorder();
+          cursor: pointer;
+          &:hover {
+            background-color: #F0FBFD;
+          }
         }
         .cart {
           margin: -12px 0 0 20px;
@@ -335,9 +362,23 @@ footer {
       h4 {
         font-weight: 400;
         padding-bottom: 0;
+        line-height: 18px;
+      }
+      .embedded-heading {
+        margin-top: 25px;
+      }
+      .button-primary {
+        @include buttonPrimary;
+        margin: 5px 45px 5px 0;
+        font-weight: normal;
+        padding: 4px 11px;
+        font-size: 13px;
+        a {
+          color: white;
+        }
       }
       p {
-        margin: 10px 0;
+        margin: 12px 0;
       }
       i {
         margin: 7px 7px 0 0;
@@ -346,25 +387,47 @@ footer {
     }
   }
   .lower-footer {
-    text-align: center;
-    // float: left;
-    // color: $cTextMain;
-    .region {
-      padding: 40px 20px 20px;
+    .locale {
+      width: 420px;
+      margin: 0 auto;
+      padding: 30px 20px;
       overflow: hidden;
       div {
         float: left;
-        padding: 10px;
-        border: 1px solid #ccc;
-      }
-      button {
-        float: left;
+        height: 32px;
+        line-height: 32px;
+        margin-right: -1px;
+        padding: 0 10px;
+        border: 1px solid #e2e2e2;
+        cursor: pointer;
+        .fa {
+          position: relative;
+          top: 2px;
+          left: -2px;
+          font-size: 18px;
+          margin-right: 5px;
+        }
+        &:hover {
+          background: #CCE9F0;
+          color: #0192B5;
+        }
+        &:last-child {
+          float: right;
+          @include buttonPrimary;
+          a {
+            color: white;
+          }
+        }
       }
     }
-    nav span {
-      margin: 0 10px;
-      a {
-        color: $cTextMain;
+    nav {
+      text-align: center;
+      span {
+        color: #999;
+        a {
+          margin: 0 10px;
+          color: $cTextMain;
+        }
       }
     }
   }

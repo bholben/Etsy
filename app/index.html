@@ -30,15 +30,15 @@
           </div>
 
           <div class="search">
-            <input type="text" class="search-box" placeholder="Search for items or shops">
-            <button>Search</button>
-            <div class="browse">Browse
-              <i class="fa fa-caret-down"></i>
-            </div>
+            <form action="#" method="get">
+              <input type="text" class="search-box" placeholder="Search for items or shops">
+              <button>Search</button>
+              <div class="browse">Browse
+                <i class="fa fa-caret-down"></i>
+              </div>
+            </form>
           </div>
         </div>
-
-
 
         <div class="nav-right">
           <ul>
@@ -46,10 +46,7 @@
             <li>Register</li>
             <li class="sign-in">Sign In</li>
             <li class="cart">
-              <div>
-                <i class="fa fa-shopping-cart"></i>
-                Cart
-              </div>
+              <div><i class="fa fa-shopping-cart"></i>Cart</div>
             </li>
           </ul>
         </div>
@@ -84,11 +81,11 @@
 
           <div class="price-filter">
             <h4>Price Filter</h4>
+            <form action="#" method="get">
             <input type="text" placeholder="min">to
             <input type="text" placeholder="max">
-            <button type="submit">
-              <i class="fa fa-caret-right"></i>
-            </button>
+            <button type="submit"><i class="fa fa-caret-right"></i></button>
+            </form>
           </div>
 
 
@@ -144,8 +141,8 @@
 
           <div>
             <h4>Turn Your Passion Into a Business</h4>
-            <button>Open a Shop</button>
-            <h4>Sell on Etsy</h4>
+            <div class="button-primary"><a href="#">Open a Shop</a></div>
+            <h4 class="embedded-heading">Sell on Etsy</h4>
             <a href="#"><p>Seller</p></a>
             <a href="#"><p>Etsy Credit Card Reader</p></a>
           </div>
@@ -187,11 +184,11 @@
 
         <div class="lower-footer">
 
-          <div class="region">
-            <div class="country"><i class="fa fa-globe"></i><span>United States</span></div>
-            <div class="language">English(US)</div>
-            <div class="currency">$ USD</div>
-            <button>Help</button>
+          <div class="locale">
+            <div><i class="fa fa-globe"></i><span>United States</span></div>
+            <div>English(US)</div>
+            <div>$ USD</div>
+            <div><a href="#">Help</a></div>
           </div>
 
           <nav>
@@ -219,6 +216,7 @@
         <!-- build:js scripts/main.js -->
         <script src="scripts/etsy_data.js"></script>
         <script src="scripts/main.js"></script>
+        <script src="scripts/exercises.js"></script>
         <!-- endbuild -->
 </body>
 </html>
