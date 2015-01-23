@@ -1,0 +1,208 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>Etsy Product Page</title>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link rel="stylesheet" href="styles/vendor.css">
+
+    <link rel="stylesheet" href="styles/main.css">
+
+  </head>
+  <body>
+
+    <header>
+      <nav>
+
+        <div class="nav-left">
+          <div class="logo">
+            <a href="#"><img src="images/etsylogo.png" alt="Etsy"></a>
+          </div>
+
+          <div class="search">
+            <form action="#" method="get">
+              <input type="text" class="search-box" placeholder="Search for items or shops">
+              <button>Search</button>
+              <div class="browse">Browse
+                <i class="fa fa-caret-down"></i>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="nav-right">
+          <ul>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Register</a></li>
+            <li class="sign-in">Sign In</li>
+            <li class="cart">
+              <div><i class="fa fa-shopping-cart"></i>Cart</div>
+            </li>
+          </ul>
+        </div>
+
+      </nav>
+    </header>
+    <div class="container">
+
+      <aside>
+        <h3>Show results for:</h3>
+        <div class="sidebar">
+
+          <h4>Item Type</h4>
+          <ul class="item-type">
+            <li class="radio"><input type="radio" name="itemType" id="allItems"><label for="allItems">All Items</label></li>
+            <li class="radio"><input type="radio" name="itemType" id="handmade"><label for="handmade">Handmade</label></li>
+            <li class="radio"><input type="radio" name="itemType" id="vintage"><label for="vintage">Vintage</label></li>
+            <li class="radio"><input type="radio" name="itemType" id="craftSupplies"><label for="craftSupplies">Craft Supplies</label></li>
+          </ul>
+
+          <h4>Categories</h4>
+          <ul class="categories">
+            <li><a href="#">Handmade</a></li>
+            <li><a href="#">Paper Goods</a></li>
+            <li><a href="#">Clothing</a></li>
+            <li><a href="#">Holidays</a></li>
+            <li><a href="#">Everything Else</a></li>
+            <li><a href="#">Art</a></li>
+            <li><a href="#">Geekery</a></li>
+            <li><a href="#">Accessories</a></li>
+          </ul>
+
+          <div class="price-filter">
+            <h4>Price Filter</h4>
+            <form action="#" method="get">
+              <input type="text" placeholder="min">to
+              <input type="text" placeholder="max">
+              <button type="submit"><i class="fa fa-caret-right"></i></button>
+            </form>
+          </div>
+
+
+          <h4>Filter by Color</h4>
+          <ul class="color-filter">
+            <a href="#"><li class="red"></li></a>
+            <a href="#"><li class="orange"></li></a>
+            <a href="#"><li class="yellow"></li></a>
+            <a href="#"><li class="green"></li></a>
+            <a href="#"><li class="cyan"></li></a>
+            <a href="#"><li class="purple"></li></a>
+            <a href="#"><li class="black"></li></a>
+            <a href="#"><li class="white"></li></a>
+          </ul>
+
+
+          <h4>Ordering Options</h4>
+          <ul>
+            <li><input type="checkbox" id="optionsEtsyGiftCards"><label for="optionsEtsyGiftCards">Accepts Etsy Gift Cards</label></li>
+            <li><input type="checkbox" id="optionsCustomizable"><label for="optionsCustomizable">Customizable</label></li>
+          </ul>
+
+          <h4>Shop Location</h4>
+          <ul>
+            <li class="radio"><input type="radio" name="location" id="anywhere"><label for="anywhere">Anywhere</label></li>
+            <li class="radio"><input type="radio" name="location" id="unitedStates"><label for="unitedStates">United States</label></li>
+          </ul>
+          <div class="shop-location"><a href="#">Choose a custom location</a></div>
+
+          <div class="ship-to">
+            <h4>Ships To</h4>
+            <div><a href="#">Clear</a></div>
+          </div>
+          <select class="ship-to">
+            <option value="canada">Canada</option>
+            <option value="usa" selected>United States</option>
+            <option value="mexico">Mexico</option>
+          </select>
+
+        </div>
+
+      </aside>
+
+      <section class="main">
+
+        <div class="search-header">
+          <span class="search-title"><span class="search-word">"javascript"</span> We found 21 items!</span>
+          <span class="search-sort">Sort by: <span class="sort-by">Relevancy </span><i class="fa fa-caret-down"></i></span>
+        </div>
+
+      </section>
+
+      <footer>
+        <div class="upper-footer">
+
+          <div>
+            <h4>Turn Your Passion Into a Business</h4>
+            <div class="button-primary"><a href="#">Open a Shop</a></div>
+            <h4 class="embedded-heading">Sell on Etsy</h4>
+            <a href="#"><p>Seller</p></a>
+            <a href="#"><p>Etsy Credit Card Reader</p></a>
+          </div>
+
+          <div>
+            <h4>Join the Community</h4>
+            <a href="#"><p>Teams</p></a>
+            <a href="#"><p>Forums</p></a>
+            <a href="#"><p>Upcoming Events</p></a>
+          </div>
+
+          <div>
+            <h4>Discover the Shop</h4>
+            <a href="#"><p>Gift Cards</p></a>
+            <a href="#"><p>Blog</p></a>
+            <a href="#"><p>Tastemakers</p></a>
+            <a href="#"><p>Mobile Apps</p></a>
+            <a href="#"><p>Gift Registries</p></a>
+            <a href="#"><p>Wholesale</p></a>
+          </div>
+
+          <div>
+            <h4>Get to Know Us</h4>
+            <a href="#"><p>About</p></a>
+            <a href="#"><p>Careers</p></a>
+            <a href="#"><p>Press</p></a>
+            <a href="#"><p>Developers</p></a>
+          </div>
+
+          <div>
+            <h4>Follow Etsy</h4>
+            <div><a href="#"><i class="fa fa-facebook-official"></i><span>Facebook</span></a></div>
+            <div><a href="#"><i class="fa fa-twitter"></i><span>Twitter</span></a></div>
+            <div><a href="#"><i class="fa fa-pinterest-p"></i><span> Pinterest</span></a></div>
+            <div><a href="#"><i class="fa fa-instagram"></i><span>Instagram</span></a></div>
+          </div>
+
+        </div>
+
+        <div class="lower-footer">
+
+          <div class="locale">
+            <div><i class="fa fa-globe"></i><span>United States</span></div>
+            <div>English(US)</div>
+            <div>$ USD</div>
+            <div><a href="#">Help</a></div>
+          </div>
+
+          <nav>
+            <span>&copy; 2015 Etsy, Inc.</span>
+            <span><a href="#">Terms</a></span>
+            <span><a href="#">Privacy</a></span>
+            <span><a href="#">Copyright</a></span>
+            <span><a href="#">Interest-based Ads</a></span>
+          </nav>
+        </div>
+
+      </footer>
+
+    </div>
+
+
+
+    <script src="scripts/vendor.js"></script>
+
+        <script src="scripts/main.js"></script>
+</body>
+</html>
