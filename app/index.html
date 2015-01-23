@@ -42,8 +42,8 @@
 
         <div class="nav-right">
           <ul>
-            <li>Help</li>
-            <li>Register</li>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Register</a></li>
             <li class="sign-in">Sign In</li>
             <li class="cart">
               <div><i class="fa fa-shopping-cart"></i>Cart</div>
@@ -61,30 +61,30 @@
 
           <h4>Item Type</h4>
           <ul class="item-type">
-            <li class="selected"><input type="radio">All Items</li>
-            <li><input type="radio">Handmade</li>
-            <li><input type="radio">Vintage</li>
-            <li><input type="radio">Craft Supplies</li>
+            <li class="radio"><input type="radio" name="itemType" id="allItems"><label for="allItems">All Items</label></li>
+            <li class="radio"><input type="radio" name="itemType" id="handmade"><label for="handmade">Handmade</label></li>
+            <li class="radio"><input type="radio" name="itemType" id="vintage"><label for="vintage">Vintage</label></li>
+            <li class="radio"><input type="radio" name="itemType" id="craftSupplies"><label for="craftSupplies">Craft Supplies</label></li>
           </ul>
 
           <h4>Categories</h4>
           <ul class="categories">
-            <li>Handmade</li>
-            <li>Paper Goods</li>
-            <li>Clothing</li>
-            <li>Holidays</li>
-            <li>Everything Else</li>
-            <li>Art</li>
-            <li>Geekery</li>
-            <li>Accessories</li>
+            <li><a href="#">Handmade</a></li>
+            <li><a href="#">Paper Goods</a></li>
+            <li><a href="#">Clothing</a></li>
+            <li><a href="#">Holidays</a></li>
+            <li><a href="#">Everything Else</a></li>
+            <li><a href="#">Art</a></li>
+            <li><a href="#">Geekery</a></li>
+            <li><a href="#">Accessories</a></li>
           </ul>
 
           <div class="price-filter">
             <h4>Price Filter</h4>
             <form action="#" method="get">
-            <input type="text" placeholder="min">to
-            <input type="text" placeholder="max">
-            <button type="submit"><i class="fa fa-caret-right"></i></button>
+              <input type="text" placeholder="min">to
+              <input type="text" placeholder="max">
+              <button type="submit"><i class="fa fa-caret-right"></i></button>
             </form>
           </div>
 
@@ -104,14 +104,14 @@
 
           <h4>Ordering Options</h4>
           <ul>
-            <li><input type="checkbox">Accepts Etsy Gift Cards</li>
-            <li><input type="checkbox">Customizable</li>
+            <li><input type="checkbox" id="optionsEtsyGiftCards"><label for="optionsEtsyGiftCards">Accepts Etsy Gift Cards</label></li>
+            <li><input type="checkbox" id="optionsCustomizable"><label for="optionsCustomizable">Customizable</label></li>
           </ul>
 
           <h4>Shop Location</h4>
           <ul>
-            <li><input type="radio">Anywhere</li>
-            <li><input type="radio">United States</li>
+            <li class="radio"><input type="radio" name="location" id="anywhere"><label for="anywhere">Anywhere</label></li>
+            <li class="radio"><input type="radio" name="location" id="unitedStates"><label for="unitedStates">United States</label></li>
           </ul>
           <div class="shop-location"><a href="#">Choose a custom location</a></div>
 
@@ -120,7 +120,9 @@
             <div><a href="#">Clear</a></div>
           </div>
           <select class="ship-to">
-            <option value="usa">United States</option>
+            <option value="canada">Canada</option>
+            <option value="usa" selected>United States</option>
+            <option value="mexico">Mexico</option>
           </select>
 
         </div>

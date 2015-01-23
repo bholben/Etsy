@@ -2,6 +2,8 @@
 // Variables
 $cTextMain: #666;
 $cTextBrand: #0192b5;
+$cButtonPrimary: #59AFCA;
+$cButtonPrimaryHover: #429ABD;
 
 // Mixins
 @mixin centerPage() {
@@ -16,15 +18,15 @@ $cTextBrand: #0192b5;
 
 @mixin buttonPrimary() {
   padding: 7px 15px 8px;
-  border: 1px solid #59AFCA;
+  border: 1px solid $cButtonPrimary;
   border-radius: 3px;
   font-size: 15px;
   font-weight: 700;
   line-height: normal;
-  background: #59AFCA;
+  background: $cButtonPrimary;
   cursor: pointer;
   &:hover {
-    background: #429ABD;
+    background: $cButtonPrimaryHover;
   }
   a {
     text-decoration: none;
@@ -72,7 +74,7 @@ a {
   color: $cTextBrand;
 }
 
-a:hover {
+a:hover, label:hover {
   text-decoration: underline;
 }
 
@@ -91,24 +93,24 @@ header {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1),0 0 0 1px rgba(0, 0, 0, 0.05);
   nav {
     @include centerPage();
-    // overflow: hidden;
     .nav-left {
       overflow: hidden;
       .logo {
         float: left;
         margin-top: 25px;
-        // vertical-align: -17px;
       }
       .search {
         float: left;
         width: 445px;
         margin: 24px 0 0 15px;
         overflow: hidden;
-        .search-box {
+        input.search-box {
           float: left;
           width: 260px;
           padding: 7px 10px;
           margin-right: -5px;
+          border-top-left-radius: 3px;
+          border-bottom-left-radius: 3px;
           background: #FBFBFA;
           // outline: none;
           font-size: 14px;
@@ -123,10 +125,13 @@ header {
         }
         button {
           width: 85px;
-          background: #3f98bb;
-          border-color: #54acc7 #4ca0ba #398a9d;
+          background: $cButtonPrimary;
+          border-color: $cButtonPrimary;
           border-radius: 0 3px 3px 0;
           color: white;
+          &:hover {
+            background: $cButtonPrimaryHover;
+          }
         }
         .browse {
           float: right;
@@ -171,6 +176,9 @@ header {
           color: $cTextMain;
           text-align: center;
           font-size: 12px;
+          &:hover {
+            color: black;
+          }
           .fa {
             display: block;
             font-size: 22px;
@@ -186,6 +194,11 @@ header {
   @include centerPage();
   padding: 25px 0;
   overflow: hidden;
+}
+
+.selected {
+  color: $cTextMain;
+  font-weight: 700;
 }
 
 aside {
@@ -226,10 +239,13 @@ aside {
       }
       button {
         width: 47px;
-        background: #eee;
+        background: #F3F3F2;
         border-color: #cbcbcb;
         font-size: 22px;
         padding-left: 3px;
+        &:hover {
+          background: #EBEBEA;
+        }
       }
     }
     .color-filter {
@@ -303,8 +319,10 @@ section.main {
     }
     .search-sort {
       float: right;
+      cursor: default;
       .sort-by {
         color: $cTextBrand;
+        cursor: pointer;
       }
       .fa {
         color: #ccc;

@@ -28,3 +28,8 @@ etsyListingsData.results.forEach(function (listing) {
 
 });
 
+$('.sidebar > ul li.radio').on('click', function () {
+  $(this).parent().children().removeClass('selected');
+  $(this).addClass('selected');
+});
+
