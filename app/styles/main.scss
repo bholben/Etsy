@@ -1,11 +1,17 @@
 
 // Variables
 $cTextMain: #666;
+$cTextBrand: #0192b5;
 
 // Mixins
 @mixin centerPage() {
   margin: 0 auto;
   width: 1000px;
+}
+
+@mixin roundBorder() {
+  border: 1px solid;
+  border-radius: 3px;
 }
 
 
@@ -46,7 +52,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: #0192b5;
+  color: $cTextBrand;
 }
 
 a:hover {
@@ -78,13 +84,13 @@ header {
       }
       .search {
         float: left;
-        width: 455px;
+        width: 445px;
         margin: 24px 0 0 15px;
         overflow: hidden;
         .search-box {
           float: left;
           width: 260px;
-          padding: 6px 10px;
+          padding: 7px 10px;
           margin-right: -5px;
           background: #FBFBFA;
           // outline: none;
@@ -94,9 +100,8 @@ header {
           float: left;
           height: 34px;
           line-height: 17px;
-          padding: 7px 15px 8px;
-          border: 1px solid;
-          border-radius: 3px;
+          padding: 7px 10px 8px;
+          @include roundBorder();
           font-size: 15px;
         }
         button {
@@ -108,10 +113,13 @@ header {
         }
         .browse {
           float: right;
-          width: 100px;
+          width: 90px;
           margin-left: 15px;
-          border-color: #bbb;
+          border-color: #ddd;
           cursor: pointer;
+          .fa {
+            color: #bbb;
+          }
         }
       }
     }
@@ -127,8 +135,7 @@ header {
           font-size: 15px;
         }
         .sign-in {
-          border: 1px solid;
-          border-radius: 3px;
+          @include roundBorder();
         }
         .cart {
           margin: -12px 0 0 20px;
@@ -156,14 +163,13 @@ header {
 
 aside {
   float: left;
-  // margin-right: 0px;
   .sidebar {
     float: left;
     width: 224px;
     margin-top: 5px;
     padding: 14px;
     background: white;
-    color: #0192b5;
+    color: $cTextBrand;
     font-size: 13px;
     h4, .price-filter, .ship-to {
       border-top: 1px solid #dfdfdf;
@@ -176,19 +182,27 @@ aside {
       margin-top: 0;
       padding-top: 0;
     }
+    .categories li {
+      margin: 6px 0 6px 10px;
+    }
     .price-filter {
       input, button {
         height: 35px;
-        border-radius: 3px;
+        @include roundBorder();
+        border-color: #ccc;
       }
       input {
         width: 60px;
         margin-right: 5px;
+        padding: 10px;
+        font-size: 14px;
       }
       button {
-        width: 40px;
+        width: 47px;
         background: #eee;
         border-color: #cbcbcb;
+        font-size: 22px;
+        padding-left: 3px;
       }
     }
     .color-filter {
@@ -198,8 +212,8 @@ aside {
         width: 20px;
         height: 20px;
         margin: 5px 4px 5px 0;
-        border: 1px solid #bbb;
-        border-radius: 3px;
+        @include roundBorder();
+        border-color: #bbb;
       }
       .red {
         background: #F40B32;
@@ -253,6 +267,7 @@ section.main {
     margin-bottom: 7px;
     padding-left: 28px;
     line-height: 18px;
+    font-size: 13px;
     .search-title {
       float: left;
       .search-word {
@@ -261,6 +276,12 @@ section.main {
     }
     .search-sort {
       float: right;
+      .sort-by {
+        color: $cTextBrand;
+      }
+      .fa {
+        color: #ccc;
+      }
     }
   }
 
@@ -296,6 +317,54 @@ section.main {
       }
       .listing-currency {
         margin-left: 3px;
+      }
+    }
+  }
+}
+
+footer {
+  clear: both;
+  .upper-footer {
+    overflow: hidden;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+    >div {
+      width: 150px;
+      float: left;
+      margin-right: 50px;
+      h4 {
+        font-weight: 400;
+        padding-bottom: 0;
+      }
+      p {
+        margin: 10px 0;
+      }
+      i {
+        margin: 7px 7px 0 0;
+        font-size: 16px;
+      }
+    }
+  }
+  .lower-footer {
+    text-align: center;
+    // float: left;
+    // color: $cTextMain;
+    .region {
+      padding: 40px 20px 20px;
+      overflow: hidden;
+      div {
+        float: left;
+        padding: 10px;
+        border: 1px solid #ccc;
+      }
+      button {
+        float: left;
+      }
+    }
+    nav span {
+      margin: 0 10px;
+      a {
+        color: $cTextMain;
       }
     }
   }

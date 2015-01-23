@@ -12,6 +12,7 @@ var connectLivereload = require('connect-livereload');
 var http = require('http');
 var wiredep = require('wiredep').stream;
 var nib = require('nib');
+var jeet = require('jeet');
 
 
 gulp.task('scss', function () {
@@ -29,8 +30,7 @@ gulp.task('styl', function () {
   return gulp.src('app/styles/main.styl')
     .pipe($.plumber())
     .pipe($.stylus({
-      // 'nib' adds autoprefixing and some other niceties.
-      use: nib(),
+      use: [nib(), jeet()],
       compress: true
     }))
     .pipe(gulp.dest('.tmp/styles'));

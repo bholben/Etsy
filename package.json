@@ -25,6 +25,7 @@
     "gulp-stylus": "^2.0.0",
     "gulp-uglify": "^0.3.0",
     "gulp-useref": "^0.4.2",
+    "jeet": "^6.1.2",
     "lazypipe": "^0.2.1",
     "nib": "^1.1.0",
     "opn": "^0.1.1",
