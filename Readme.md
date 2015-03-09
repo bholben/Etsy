@@ -11,7 +11,7 @@ Re-creation of an Etsy search results page.
 ### Technologies
   * HTML
   * CSS
-  * Sass (SASS)
+  * Sass
   * JavaScript
   * jQuery
 
