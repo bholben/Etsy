@@ -15,6 +15,12 @@ Re-creation of an Etsy search results page.
   * JavaScript
   * jQuery
 
+### Tooling
+  * Yeoman
+  * Gulp
+  * NPM
+  * Bower
+
 ### How to use it
 
 From command line:
